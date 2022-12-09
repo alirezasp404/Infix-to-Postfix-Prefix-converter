@@ -1,0 +1,8 @@
+# ninja log v5
+1	186	6922810221001460	InfixConverter_autogen/timestamp	5c008308bc1ba94
+189	245	6922810222284278	CMakeFiles/InfixConverter.dir/InfixConverter_autogen/mocs_compilation.cpp.obj	f75df74d5b9776ac
+1	186	6922810221001460	InfixConverter_autogen/mocs_compilation.cpp	5c008308bc1ba94
+186	1942	6922810239234022	CMakeFiles/InfixConverter.dir/main.cpp.obj	4e52d2ab6f3eb041
+1944	2361	6922810240450573	InfixConverter.exe	de8fc800fbedd1c5
+1	186	6922810221001460	C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/timestamp	5c008308bc1ba94
+1	186	6922810221001460	C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/mocs_compilation.cpp	5c008308bc1ba94
