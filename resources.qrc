@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="images">
-        <file alias="button">resources/button.png</file>
+        <file alias="button">resources/textBG.png</file>
+        <file alias="textBG">resources/textBG.png</file>
+        <file alias="background">resources/background.png</file>
     </qresource>
 </RCC>

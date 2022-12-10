@@ -14,7 +14,7 @@ private:
     int width;
     int height;
 public:
-    Button(int width,int height);
+    Button(int width,int height,QString color);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 signals:

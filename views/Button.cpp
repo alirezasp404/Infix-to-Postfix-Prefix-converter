@@ -4,8 +4,8 @@
 #include <QFont>
 #include <QTextDocument>
 #include <QPainter>
-Button:: Button(int width,int height):width(width),height(height), QGraphicsTextItem(){
-    setDefaultTextColor(QColor("white"));
+Button:: Button(int width,int height,QString color):width(width),height(height), QGraphicsTextItem(){
+    setDefaultTextColor(QColor(color));
     QFont font;
     font.setPixelSize(30);
     font.setBold(true);

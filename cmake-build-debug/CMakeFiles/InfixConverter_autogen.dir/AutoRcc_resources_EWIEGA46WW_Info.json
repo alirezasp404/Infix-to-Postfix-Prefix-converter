@@ -1,0 +1,24 @@
+{
+	"BUILD_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter",
+	"CMAKE_SOURCE_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter",
+	"INCLUDE_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/Alireza/CLionProjects/InfixConverter/resources/background.png",
+		"C:/Users/Alireza/CLionProjects/InfixConverter/resources/textBG.png",
+		"C:/Users/Alireza/CLionProjects/InfixConverter/resources/textBG.png"
+	],
+	"LOCK_FILE" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/InfixConverter_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.4.1/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/InfixConverter_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/Alireza/CLionProjects/InfixConverter/resources.qrc",
+	"VERBOSITY" : 0
+}

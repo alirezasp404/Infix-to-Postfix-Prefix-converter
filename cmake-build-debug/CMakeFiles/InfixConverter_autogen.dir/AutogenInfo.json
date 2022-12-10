@@ -211,13 +211,20 @@
 		"C:/Program Files/JetBrains/CLion 2022.3/bin/cmake/win/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets.cmake",
 		"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake"
+		"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake",
+		"C:/Users/Alireza/CLionProjects/InfixConverter/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/Alireza/CLionProjects/InfixConverter",
 	"DEP_FILE" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "InfixConverter_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/views/Background.h",
+			"MU",
+			"DWW7M6GQBY/moc_Background.cpp",
+			null
+		],
 		[
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/Button.h",
 			"MU",
@@ -234,6 +241,12 @@
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/TextField.h",
 			"MU",
 			"DWW7M6GQBY/moc_TextField.cpp",
+			null
+		],
+		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/windows/Start.h",
+			"MU",
+			"Z5D6VF4H2M/moc_Start.cpp",
 			null
 		]
 	],
@@ -308,6 +321,11 @@
 	[
 		[ "C:/Users/Alireza/CLionProjects/InfixConverter/main.cpp", "MU", null ],
 		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/views/Background.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/Button.cpp",
 			"MU",
 			null
@@ -319,6 +337,11 @@
 		],
 		[
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/TextField.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/windows/Start.cpp",
 			"MU",
 			null
 		]

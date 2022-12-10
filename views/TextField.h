@@ -16,7 +16,7 @@ public:
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
-    TextField(int width, int height);
+    TextField(int width, int height,QString color);
 };
 
 
