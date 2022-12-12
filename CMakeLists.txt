@@ -14,7 +14,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(InfixConverter main.cpp views/Button.cpp views/Button.h views/Button.cpp views/Label.cpp views/Label.h views/TextField.cpp views/TextField.h windows/Start.cpp windows/Start.h views/Background.cpp views/Background.h resources.qrc)
+add_executable(InfixConverter main.cpp views/Button.cpp views/Button.h views/Button.cpp views/Label.cpp views/Label.h views/TextField.cpp views/TextField.h windows/Start.cpp windows/Start.h views/Background.cpp views/Background.h resources.qrc views/StackType.cpp views/StackType.h)
 target_link_libraries(InfixConverter
         Qt::Core
         Qt::Gui

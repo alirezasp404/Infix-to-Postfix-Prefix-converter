@@ -16,19 +16,20 @@ private:
     Background* background;
     Label* titleLabel;
     Label* resultLabel;
-    TextField* infixExpression;
-    Button* prefixConvert;
-    Button* postfixConvert;
+    TextField* infixTextField;
+    Button* prefixConvertButton;
+    Button* postfixConvertButton;
     Button* exitButton;
+    QString infixExpression;
 public:
     void addItems();
     Start();
     ~Start();
+    int checkPriority(QChar);
 public slots:
-    void preConvert();
-    void postConvert();
+    void prefixConvert();
+    void postfixConvert();
     void exitFunc();
 };
-
 
 #endif //INFIXCONVERTER_START_H

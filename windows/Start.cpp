@@ -1,6 +1,7 @@
 
 
 #include "Start.h"
+#include "../views/StackType.h"
 
 Start::Start() {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -13,11 +14,12 @@ Start::Start() {
     scene->addItem(background);
     addItems();
 }
-Start::~Start(){
-    delete infixExpression;
+
+Start::~Start() {
+    delete infixTextField;
     delete background;
-    delete postfixConvert;
-    delete prefixConvert;
+    delete postfixConvertButton;
+    delete prefixConvertButton;
     delete titleLabel;
     delete resultLabel;
     delete exitButton;
@@ -25,50 +27,99 @@ Start::~Start(){
 }
 
 void Start::addItems() {
-    titleLabel = new Label(40, "white");
+    titleLabel = new Label(40, "#6D2CB5");
     titleLabel->setPlainText("Infix to Postfix/Prefix converter");
     scene->addItem(titleLabel);
     titleLabel->setPos(50, 50);
 
-    infixExpression = new TextField(width()/3.1, 55,"white");
-    infixExpression->setPlainText("Please enter infix expression");
-    scene->addItem(infixExpression);
-    infixExpression->setPos(width() /6, height()/3);
+    infixTextField = new TextField(width() / 3.1, 55, "#6D2CB5");
+    infixTextField->setPlainText("Please enter infix expression");
+    scene->addItem(infixTextField);
+    infixTextField->setPos(width() / 6, height() / 3);
 
-    prefixConvert = new Button(240, 150,"#ac00b7");
-    prefixConvert->setPlainText("Prefix Convert");
-    scene->addItem(prefixConvert);
-    prefixConvert->setPos(width() /6, height() / 2.1);
-    connect(prefixConvert, &Button::press, this, &Start::preConvert);
+    prefixConvertButton = new Button(240, 150, "#ac00b7");
+    prefixConvertButton->setPlainText("Prefix Convert");
+    scene->addItem(prefixConvertButton);
+    prefixConvertButton->setPos(width() / 6, height() / 2.1);
+    connect(prefixConvertButton, &Button::press, this, &Start::prefixConvert);
 
-    postfixConvert = new Button(240, 150,"#2260b3");
-    postfixConvert->setPlainText("Postfix Convert");
-    scene->addItem(postfixConvert);
-    postfixConvert->setPos(width() /3 , height() / 2.1);
-    connect(postfixConvert, &Button::press, this, &Start::postConvert);
+    postfixConvertButton = new Button(240, 150, "#2260b3");
+    postfixConvertButton->setPlainText("Postfix Convert");
+    scene->addItem(postfixConvertButton);
+    postfixConvertButton->setPos(width() / 3, height() / 2.1);
+    connect(postfixConvertButton, &Button::press, this, &Start::postfixConvert);
 
-    resultLabel = new Label(30,"white");
+    resultLabel = new Label(30, "");
     resultLabel->setPlainText("");
     scene->addItem(resultLabel);
-    resultLabel->setPos(width() /6, height()/1.6);
+    resultLabel->setPos(width() / 6, height() / 1.6);
 
-    exitButton = new Button(80, 150,"white");
+    exitButton = new Button(80, 150, "#6D2CB5");
     exitButton->setPlainText("Exit");
     scene->addItem(exitButton);
-    exitButton->setPos(width() /2 , height()-65);
+    exitButton->setPos(width() / 2, height() - 65);
     connect(exitButton, &Button::press, this, &Start::exitFunc);
 }
 
-void Start::preConvert() {
-    resultLabel->setDefaultTextColor("#ac00b7");
-    resultLabel->setPlainText("Result :");
-}
-
-void Start::postConvert() {
-    resultLabel->setDefaultTextColor("#2260b3");
-    resultLabel->setPlainText("Result :");
-}
 
 void Start::exitFunc() {
-exit(0);
+    exit(0);
 }
+
+void Start::prefixConvert() {
+    infixExpression = infixTextField->toPlainText();
+
+
+    resultLabel->setDefaultTextColor("#ac00b7");
+    resultLabel->setPlainText("Result : " );
+}
+
+void Start::postfixConvert() {
+    infixExpression = infixTextField->toPlainText();
+    QString postfixExpression="";
+    StackType operandsStack(infixExpression.length());
+    for (int i = 0; i < infixExpression.length(); ++i) {
+        if(infixExpression[i]>='0' && infixExpression[i]<='9')//If it's a number
+            postfixExpression+=infixExpression[i];
+        else if(infixExpression[i]=='(')//If  it's opening bracket
+            operandsStack.push(infixExpression[i]);
+        else if(infixExpression[i]==')') {//If  it's closing bracket
+            while(operandsStack.peek()!='(')
+                postfixExpression += operandsStack.pop();
+            operandsStack.pop();
+        }
+        else{
+            if(checkPriority(infixExpression[i])!=-1) {
+                //If it's an operand
+                while (!operandsStack.isEmpty() &&
+                       checkPriority(infixExpression[i]) <= checkPriority(operandsStack.peek()))
+                    postfixExpression += operandsStack.pop();
+                operandsStack.push(infixExpression[i]);
+            }else{
+                resultLabel->setPlainText("Please enter correct Expression !");
+                resultLabel->setDefaultTextColor("red");
+                return;
+            }
+        }
+    }
+    while(!operandsStack.isEmpty())
+        postfixExpression += operandsStack.pop();
+    resultLabel->setDefaultTextColor("#2260b3");
+    resultLabel->setPlainText("Result : " + postfixExpression);
+}
+
+int Start::checkPriority(QChar operand) {
+        if(operand == '+' || operand =='-')
+            return 1;
+
+        else if(operand == '*' || operand =='/')
+            return 2;
+
+        else if(operand == '^')
+            return 3;
+        else
+            return -1;
+    }
+
+
+

@@ -105,6 +105,14 @@ build CMakeFiles/InfixConverter.dir/views/Background.cpp.obj: CXX_COMPILER__Infi
   OBJECT_DIR = CMakeFiles\InfixConverter.dir
   OBJECT_FILE_DIR = CMakeFiles\InfixConverter.dir\views
 
+build CMakeFiles/InfixConverter.dir/views/StackType.cpp.obj: CXX_COMPILER__InfixConverter_Debug C$:/Users/Alireza/CLionProjects/InfixConverter/views/StackType.cpp || cmake_object_order_depends_target_InfixConverter
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\InfixConverter.dir\views\StackType.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/include -isystem C:/Qt/6.4.1/mingw_64/include/QtCore -isystem C:/Qt/6.4.1/mingw_64/include -isystem C:/Qt/6.4.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.4.1/mingw_64/include/QtGui -isystem C:/Qt/6.4.1/mingw_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles\InfixConverter.dir
+  OBJECT_FILE_DIR = CMakeFiles\InfixConverter.dir\views
+
 build CMakeFiles/InfixConverter.dir/InfixConverter_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CXX_COMPILER__InfixConverter_Debug C$:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/InfixConverter_autogen/EWIEGA46WW/qrc_resources.cpp || cmake_object_order_depends_target_InfixConverter
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\InfixConverter.dir\InfixConverter_autogen\EWIEGA46WW\qrc_resources.cpp.obj.d
@@ -121,7 +129,7 @@ build CMakeFiles/InfixConverter.dir/InfixConverter_autogen/EWIEGA46WW/qrc_resour
 #############################################
 # Link the executable InfixConverter.exe
 
-build InfixConverter.exe: CXX_EXECUTABLE_LINKER__InfixConverter_Debug CMakeFiles/InfixConverter.dir/InfixConverter_autogen/mocs_compilation.cpp.obj CMakeFiles/InfixConverter.dir/main.cpp.obj CMakeFiles/InfixConverter.dir/views/Button.cpp.obj CMakeFiles/InfixConverter.dir/views/Label.cpp.obj CMakeFiles/InfixConverter.dir/views/TextField.cpp.obj CMakeFiles/InfixConverter.dir/windows/Start.cpp.obj CMakeFiles/InfixConverter.dir/views/Background.cpp.obj CMakeFiles/InfixConverter.dir/InfixConverter_autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a || InfixConverter_autogen InfixConverter_autogen_timestamp_deps
+build InfixConverter.exe: CXX_EXECUTABLE_LINKER__InfixConverter_Debug CMakeFiles/InfixConverter.dir/InfixConverter_autogen/mocs_compilation.cpp.obj CMakeFiles/InfixConverter.dir/main.cpp.obj CMakeFiles/InfixConverter.dir/views/Button.cpp.obj CMakeFiles/InfixConverter.dir/views/Label.cpp.obj CMakeFiles/InfixConverter.dir/views/TextField.cpp.obj CMakeFiles/InfixConverter.dir/windows/Start.cpp.obj CMakeFiles/InfixConverter.dir/views/Background.cpp.obj CMakeFiles/InfixConverter.dir/views/StackType.cpp.obj CMakeFiles/InfixConverter.dir/InfixConverter_autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a || InfixConverter_autogen InfixConverter_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = C:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.4.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\InfixConverter.dir

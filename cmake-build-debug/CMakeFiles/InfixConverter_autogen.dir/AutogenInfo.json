@@ -238,6 +238,12 @@
 			null
 		],
 		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/views/StackType.h",
+			"MU",
+			"DWW7M6GQBY/moc_StackType.cpp",
+			null
+		],
+		[
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/TextField.h",
 			"MU",
 			"DWW7M6GQBY/moc_TextField.cpp",
@@ -332,6 +338,11 @@
 		],
 		[
 			"C:/Users/Alireza/CLionProjects/InfixConverter/views/Label.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Alireza/CLionProjects/InfixConverter/views/StackType.cpp",
 			"MU",
 			null
 		],

@@ -501,6 +501,8 @@ InfixConverter_autogen/timestamp: \
   C:/Users/Alireza/CLionProjects/InfixConverter/views/Button.h \
   C:/Users/Alireza/CLionProjects/InfixConverter/views/Label.cpp \
   C:/Users/Alireza/CLionProjects/InfixConverter/views/Label.h \
+  C:/Users/Alireza/CLionProjects/InfixConverter/views/StackType.cpp \
+  C:/Users/Alireza/CLionProjects/InfixConverter/views/StackType.h \
   C:/Users/Alireza/CLionProjects/InfixConverter/views/TextField.cpp \
   C:/Users/Alireza/CLionProjects/InfixConverter/views/TextField.h \
   C:/Users/Alireza/CLionProjects/InfixConverter/windows/Start.cpp \

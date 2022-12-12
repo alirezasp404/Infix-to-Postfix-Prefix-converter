@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "InfixConverter",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "InfixConverter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InfixConverter-Debug-65279a936ad89be06e65.json",
+					"name" : "InfixConverter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "InfixConverter_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InfixConverter_autogen-Debug-90b4d588712b7743519f.json",
+					"name" : "InfixConverter_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "InfixConverter_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InfixConverter_autogen_timestamp_deps-Debug-caa93c512cb85d1d8733.json",
+					"name" : "InfixConverter_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug",
+		"source" : "C:/Users/Alireza/CLionProjects/InfixConverter"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
