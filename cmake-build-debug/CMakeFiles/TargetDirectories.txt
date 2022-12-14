@@ -1,5 +1,0 @@
-C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/InfixConverter.dir
-C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/InfixConverter_autogen_timestamp_deps.dir
-C:/Users/Alireza/CLionProjects/InfixConverter/cmake-build-debug/CMakeFiles/InfixConverter_autogen.dir
