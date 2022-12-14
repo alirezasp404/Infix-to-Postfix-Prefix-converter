@@ -25,7 +25,8 @@ public:
     void addItems();
     Start();
     ~Start();
-    int checkPriority(QChar);
+    int checkPriority(QString);
+    void warning();
 public slots:
     void prefixConvert();
     void postfixConvert();

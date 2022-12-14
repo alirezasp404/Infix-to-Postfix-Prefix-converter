@@ -33,7 +33,7 @@ void Start::addItems() {
     titleLabel->setPos(50, 50);
 
     infixTextField = new TextField(width() / 3.1, 55, "#6D2CB5");
-    infixTextField->setPlainText("Please enter infix expression");
+    infixTextField->setPlainText("Enter infix expression");
     scene->addItem(infixTextField);
     infixTextField->setPos(width() / 6, height() / 3);
 
@@ -67,59 +67,151 @@ void Start::exitFunc() {
 }
 
 void Start::prefixConvert() {
+    if (infixTextField->toPlainText() == "") {
+        warning();
+        return;
+    }
+    int numOfOperands = 0;
+    int numOfOperators = 0;
     infixExpression = infixTextField->toPlainText();
+    StackType operators(infixExpression.length());
+    StackType operands(infixExpression.length());
 
+    for (int i = 0; i < infixExpression.length(); i++) {
+        if (infixExpression[i] >= '0' && infixExpression[i] <= '9') {
+            operands.push(infixExpression[i]);
+            numOfOperands++;
+        } else if (infixExpression[i] == '(') {
+            if (infixExpression[i + 1] == '-') {
+                operands.push('-' + infixExpression[i + 2]);
+                numOfOperands++;
+                i += 3;
+            } else
+                operators.push(infixExpression[i]);
 
-    resultLabel->setDefaultTextColor("#ac00b7");
-    resultLabel->setPlainText("Result : " );
+        } else if (infixExpression[i] == ')') {
+            while (!operators.isEmpty() && operators.peek() != '(') {
+                QString operand1 = operands.pop();
+                QString operand2 = operands.pop();
+                QString op = operators.pop();
+                QString temp = op + operand2 + operand1;
+                operands.push(temp);
+            }
+            if (operators.isEmpty()) {
+                warning();
+                return;
+            }
+            operators.pop();
+        } else if (checkPriority(infixExpression[i]) != -1) {
+            numOfOperators++;
+            while (!operators.isEmpty() &&
+                   checkPriority(infixExpression[i]) <= checkPriority(operators.peek())) {
+                QString operand1 = operands.pop();
+                QString operand2 = operands.pop();
+                QString op = operators.pop();
+                QString temp = op + operand2 + operand1;
+                operands.push(temp);
+            }
+            operators.push(infixExpression[i]);
+        } else {
+            warning();
+            return;
+        }
+    }
+    while (!operators.isEmpty()) {
+        if (operators.peek() == '(' || operators.peek() == ')') {
+            warning();
+            return;
+        }
+        QString operand1 = operands.pop();
+        QString operand2 = operands.pop();
+        QString op = operators.pop();
+        QString temp = op + operand2 + operand1;
+        operands.push(temp);
+    }
+    if (numOfOperands != (numOfOperators + 1))
+        warning();
+    else {
+        resultLabel->setDefaultTextColor("#ac00b7");
+        resultLabel->setPlainText("Result : " + operands.peek());
+    }
 }
 
 void Start::postfixConvert() {
+    if (infixTextField->toPlainText() == "") {
+        warning();
+        return;
+    }
+    int numOfOperands = 0;
+    int numOfOperators = 0;
     infixExpression = infixTextField->toPlainText();
-    QString postfixExpression="";
-    StackType operandsStack(infixExpression.length());
+    QString postfixExpression = "";
+    StackType operators(infixExpression.length());
     for (int i = 0; i < infixExpression.length(); ++i) {
-        if(infixExpression[i]>='0' && infixExpression[i]<='9')//If it's a number
-            postfixExpression+=infixExpression[i];
-        else if(infixExpression[i]=='(')//If  it's opening bracket
-            operandsStack.push(infixExpression[i]);
-        else if(infixExpression[i]==')') {//If  it's closing bracket
-            while(operandsStack.peek()!='(')
-                postfixExpression += operandsStack.pop();
-            operandsStack.pop();
-        }
-        else{
-            if(checkPriority(infixExpression[i])!=-1) {
-                //If it's an operand
-                while (!operandsStack.isEmpty() &&
-                       checkPriority(infixExpression[i]) <= checkPriority(operandsStack.peek()))
-                    postfixExpression += operandsStack.pop();
-                operandsStack.push(infixExpression[i]);
-            }else{
-                resultLabel->setPlainText("Please enter correct Expression !");
-                resultLabel->setDefaultTextColor("red");
+        if (infixExpression[i] >= '0' && infixExpression[i] <= '9') {//If it's a number
+            postfixExpression += infixExpression[i];
+            numOfOperands++;
+        } else if (infixExpression[i] == '(') {//If  it's opening bracket
+            if (infixExpression[i + 1] == '-') {
+                postfixExpression += '-' + infixExpression[i + 2];
+                i += 3;
+                numOfOperands++;
+            } else
+                operators.push(infixExpression[i]);
+        } else if (infixExpression[i] == ')') {//If  it's closing bracket
+            while (!operators.isEmpty() && operators.peek() != '(')
+                postfixExpression += operators.pop();
+            if (operators.isEmpty()) {
+                warning();
                 return;
             }
+            operators.pop();
+        } else if (checkPriority(infixExpression[i]) != -1) {//If it's an operator
+            numOfOperators++;
+            while (!operators.isEmpty() &&
+                   checkPriority(infixExpression[i]) <= checkPriority(operators.peek()))
+                postfixExpression += operators.pop();
+            operators.push(infixExpression[i]);
+        } else {
+            warning();
+            return;
         }
     }
-    while(!operandsStack.isEmpty())
-        postfixExpression += operandsStack.pop();
-    resultLabel->setDefaultTextColor("#2260b3");
-    resultLabel->setPlainText("Result : " + postfixExpression);
+    while (!operators.isEmpty()) {
+        if (operators.peek() == '(' || operators.peek() == ')') {
+            warning();
+            return;
+        }
+        postfixExpression += operators.pop();
+    }
+    if (numOfOperands != (numOfOperators + 1))
+        warning();
+    else {
+        resultLabel->setDefaultTextColor("#2260b3");
+        resultLabel->setPlainText("Result : " + postfixExpression);
+    }
 }
 
-int Start::checkPriority(QChar operand) {
-        if(operand == '+' || operand =='-')
-            return 1;
+int Start::checkPriority(QString operand) {
+    if (operand == '+' || operand == '-')
+        return 1;
 
-        else if(operand == '*' || operand =='/')
-            return 2;
+    else if (operand == '*' || operand == '/')
+        return 2;
 
-        else if(operand == '^')
-            return 3;
-        else
-            return -1;
-    }
+    else if (operand == '^')
+        return 3;
+    else
+        return -1;
+}
 
+void Start::warning() {
+    resultLabel->setPlainText("Please enter correct Expression !");
+    if (resultLabel->defaultTextColor() != "red")
+        resultLabel->setDefaultTextColor("red");
+    else
+        resultLabel->setDefaultTextColor("yellow");
+
+}
 
 

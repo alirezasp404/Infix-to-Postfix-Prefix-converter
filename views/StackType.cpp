@@ -3,35 +3,39 @@
 #include "StackType.h"
 
 StackType::StackType(int capacity) {
-    elements=new QChar [capacity];
-    size=capacity;
+    elements = new QString[capacity];
+    size = capacity;
     top = -1;
 }
+
 StackType::~StackType() {
-delete [] elements;
+    delete[] elements;
 }
-void StackType::push(QChar element) {
+
+void StackType::push(QString element) {
     if (isFull())
         exit(EXIT_FAILURE);
     elements[++top] = element;
 }
 
-QChar StackType::pop() {
+QString StackType::pop() {
     if (isEmpty())
         exit(EXIT_FAILURE);
     return elements[top--];
 }
 
-QChar StackType::peek() {
+QString StackType::peek() {
     if (!isEmpty())
         return elements[top];
     else {
         exit(EXIT_FAILURE);
     }
 }
- bool StackType::isEmpty(){
-        return (top == -1);
-    }
+
+bool StackType::isEmpty() {
+    return (top == -1);
+}
+
 bool StackType::isFull() {
     return (top == size - 1);
 }

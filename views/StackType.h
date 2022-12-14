@@ -8,16 +8,16 @@
 class StackType {
 public:
     int size;
-    StackType(int capacity);
+    StackType(int);
     ~StackType();
 
-    void push(QChar);
-    QChar pop();
-    QChar peek();
+    void push(QString);
+    QString pop();
+    QString peek();
     bool isEmpty();
     bool isFull();
 private:
-    QChar* elements;
+    QString* elements;
     int top;
 };
 
